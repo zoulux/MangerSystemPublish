@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>CheckUserServlet</servlet-name>
+    <servlet-class>com.zlx.servlet.CheckUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckUserServlet</servlet-name>
+    <url-pattern>/CheckUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddUserServlet</servlet-name>
+    <servlet-class>com.zlx.servlet.AddUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUserServlet</servlet-name>
+    <url-pattern>/addUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <servlet-class>com.zlx.servlet.DeleteUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <url-pattern>/deleteUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectUserServlet</servlet-name>
+    <servlet-class>com.zlx.servlet.SelectUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectUserServlet</servlet-name>
+    <url-pattern>/selectUserServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
