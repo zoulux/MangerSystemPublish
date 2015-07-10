@@ -11,8 +11,47 @@ import com.zlx.tools.UserBean;
 
 public class SelectFromSql {
 
+	public int updateAdmin(String username, String oldpwd, String newpwd) {
+
+		Connection con = null;
+		ResultSet rs = null;
+		Statement stmt = null;
+		int flag = 0;
+
+		try {
+			con = DBUtil.getconn();
+			stmt = con.createStatement();
+			String sql1 = String.format(
+					"select password from admin where adminname='%s' ",
+					username);
+			System.err.println(sql1);
+			rs = stmt.executeQuery(sql1);
+
+			rs.next();
+			if (!rs.getString(1).equals(oldpwd)) {
+				flag = 1;
+			} else {
+				String sql2 = String.format(
+						"update admin set password='%s' where adminname='%s' ",
+						newpwd, username);
+
+				int i = stmt.executeUpdate(sql2);
+				if (i != 0) {
+					flag = 2;
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			flag = 0;
+		} finally {
+			DBUtil.closeDB(con, stmt, rs);
+		}
+		return flag;
+
+	}
+
 	public boolean checkAdmin(String username, String password) {
-		// TODO Auto-generated method stub
 		Connection con = null;
 		ResultSet rs = null;
 		Statement stmt = null;
@@ -171,7 +210,7 @@ public class SelectFromSql {
 
 	}
 
-	public static boolean updateStudent(UserBean stu) {
+	public boolean updateStudent(UserBean stu) {
 
 		Connection con = null;
 		int rs = 0;

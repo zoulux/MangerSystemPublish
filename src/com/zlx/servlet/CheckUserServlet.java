@@ -2,11 +2,15 @@ package com.zlx.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.zlx.selectsql.SelectFromSql;
 
@@ -31,9 +35,22 @@ public class CheckUserServlet extends HttpServlet {
 
 		SelectFromSql sfq = new SelectFromSql();
 		if (sfq.checkAdmin(username, password)) {
-			response.sendRedirect("mangerage.jsp");
-		}else {
-			response.sendRedirect("error.jsp");
+			HttpSession session = request.getSession(true);
+			session.setAttribute("username", username);
+			Cookie cookie;
+			try {
+				cookie = new Cookie("mytest",
+						URLEncoder.encode("我的测试2", "UTF-8"));
+				response.addCookie(cookie);
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+
+			response.sendRedirect("./SelectServlet");
+
+		} else {
+			response.sendRedirect("./ErrorPwdServlet");
+			
 		}
 
 	}

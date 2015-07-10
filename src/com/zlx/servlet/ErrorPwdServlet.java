@@ -7,29 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zlx.selectsql.SelectFromSql;
-
-public class DeleteUserServlet extends HttpServlet {
-
+public class ErrorPwdServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		doPost(req, resp);
+		
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-
-		String[] list = req.getParameter("txt").split(",");
-
-		for (int i = 0; i < list.length; i++) {
-			SelectFromSql sfs = new SelectFromSql();
-			sfs.deleteStudent(list[i]);
-
-		}
-		resp.sendRedirect("SelectServlet");
-		// System.out.println(req.getParameter("txt"));
-		// System.out.println(">>>.");
+		req.getRequestDispatcher("./WEB-INF/error.jsp").forward(req, resp);
+	
 	}
 }

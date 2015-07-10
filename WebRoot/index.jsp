@@ -6,8 +6,8 @@
 <head>
 <title>初始化</title>
 <%
-	response.sendRedirect("login.jsp"); //直接跳转到登陆界面
-%>>
+	response.sendRedirect("LoginServlet"); //直接跳转到登陆界面
+%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 </head>

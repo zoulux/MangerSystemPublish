@@ -1,4 +1,4 @@
-#Mon Jun 22 09:36:00 CST 2015
+#Wed Jul 01 19:22:16 CST 2015
 eclipse.preferences.version=1
-validator.Checked=WebRoot/login.jsp,WebRoot/assets/js/jquery-1.8.2.min.js,WebRoot/mangerage.jsp,WebRoot/search.html,WebRoot/newmanage.html
+validator.Checked=WebRoot/login.jsp,WebRoot/manage.jsp,WebRoot/WEB-INF/login.jsp,WebRoot/assets/js/jquery-1.8.2.min.js,WebRoot/mangerage1.jsp,WebRoot/newmanage.jsp,WebRoot/mangerage.jsp,WebRoot/WEB-INF/mangerage.jsp,WebRoot/WEB-INF/search.jsp,WebRoot/search.html,WebRoot/search.jsp,WebRoot/newmanage.html
 validator.Unchecked=

@@ -27,17 +27,17 @@ public class UserBean {
 		this.xingshi = xingshi;
 	}
 
-	String sno;
-	String sname;
-	String sports;
-	String shufen;
-	String jiexi;
-	String gaodai;
-	String safe;
-	String english;
-	String englishNet;
-	String lishi;
-	String xingshi;
+	public String sno;
+	public String sname;
+	public String sports;
+	public String shufen;
+	public String jiexi;
+	public String gaodai;
+	public String safe;
+	public String english;
+	public String englishNet;
+	public String lishi;
+	public String xingshi;
 
 	public String getXingshi() {
 		return xingshi;

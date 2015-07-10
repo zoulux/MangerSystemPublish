@@ -8,13 +8,23 @@
     <servlet-name>CheckUserServlet</servlet-name>
     <url-pattern>/CheckUserServlet</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>UpdateAdminServlet</servlet-name>
+    <servlet-class>com.zlx.servlet.UpdateAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateAdminServlet</servlet-name>
+    <url-pattern>/UpdateAdminServlet</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <servlet-name>AddUserServlet</servlet-name>
     <servlet-class>com.zlx.servlet.AddUserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddUserServlet</servlet-name>
-    <url-pattern>/addUserServlet</url-pattern>
+    <url-pattern>/AddUserServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>DeleteUserServlet</servlet-name>
@@ -22,7 +32,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteUserServlet</servlet-name>
-    <url-pattern>/deleteUserServlet</url-pattern>
+    <url-pattern>/DeleteUserServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>SelectUserServlet</servlet-name>
@@ -32,4 +42,43 @@
     <servlet-name>SelectUserServlet</servlet-name>
     <url-pattern>/selectUserServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectServlet</servlet-name>
+    <servlet-class>com.zlx.servlet.SelectServlet</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>SelectServlet</servlet-name>
+    <url-pattern>/SelectServlet</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.zlx.servlet.LoginServlet</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+    
+    
+      <servlet>
+    <servlet-name>ErrorPwdServlet</servlet-name>
+    <servlet-class>com.zlx.servlet.ErrorPwdServlet</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>ErrorPwdServlet</servlet-name>
+    <url-pattern>/ErrorPwdServlet</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <servlet-class>com.zlx.servlet.UpdateUserServlet</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <url-pattern>/UpdateUserServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+
 </web-app>

@@ -6,7 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<title>学生管理系统</title>
+<title>密码修改失败</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -22,38 +22,35 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-<script type="text/javascript">
-function check() {
-	if (postFrom.username.value == "") {
-		alert("用户名不能为空");
-		return false;
-	}
-	if (postFrom.password.value == "") {
-		alert("密码不能为空");
-		return false;
-	}
-	return true;
-}
-
-
-</script>
 
 
 </head>
 <body>
-	<div class="page-container">
-		<h1>Login</h1>
-		<form action="./CheckUserServlet" method="post" onsubmit="return check()"
-			name="postFrom">
-			<input type="text" name="username" class="username"
-				placeholder="Username"> <input type="password"
-				name="password" class="password" placeholder="Password"> <span>
-				<button type="submit">Login</button>
-			</span> <span><button type="reset">Regist</button> </span>
-			<div class="error">
-				<span>+</span>
-			</div>
-		</form>
+	<div class="page-container" align="center">
+		<h1>旧密码输入不正确</h1>
+
+		<br /> <br /> <br /> <br /> <br /> <span>
+
+
+			<h1>
+				<span id="tiao">3</span>秒后自动返回
+			</h1> </span>
+
+		<script language=javascript>
+			var tiao = document.getElementById("tiao").innerHTML;
+			var seccond = parseInt(tiao);
+			setInterval("redirect()", 1000); //每1秒钟调用redirect()方法一次
+			function redirect() {
+
+				if (seccond == 0) {
+					location.href = "LoginServlet";
+				} else {
+
+					seccond--;
+					document.getElementById("tiao").innerHTML = seccond;
+				}
+			}
+		</script>
 	</div>
 
 	<!-- Javascript -->

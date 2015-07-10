@@ -11,12 +11,16 @@ import com.zlx.selectsql.SelectFromSql;
 import com.zlx.tools.MyTools;
 import com.zlx.tools.UserBean;
 
-public class AddUserServlet extends HttpServlet {
+public class UpdateUserServlet extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		doPost(req, resp);
+	}
 
 	@Override
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String sno = request.getParameter("sno");
 		String sname = request.getParameter("sname");
 		sname = MyTools.toChinese(sname);
@@ -31,16 +35,9 @@ public class AddUserServlet extends HttpServlet {
 		String xingshi = request.getParameter("xingshi");
 		UserBean user = new UserBean(sno, sname, sports, shufen, jiexi, gaodai,
 				safe, english, englishNet, lishi, xingshi);
+		System.out.println(user);
 		SelectFromSql sfs = new SelectFromSql();
-		sfs.addStudent(user);
+		sfs.updateStudent(user);
 		response.sendRedirect("SelectServlet");
-
-		// System.out.println(sno);
-	}
-
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		doPost(req, resp);
 	}
 }
